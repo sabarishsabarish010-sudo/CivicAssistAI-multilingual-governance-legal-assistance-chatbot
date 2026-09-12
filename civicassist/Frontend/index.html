@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CivicAssist AI</title>
+<link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= MAIN WEBSITE ================= -->
+
+    <div id="mainWebsite">
+
+
+        <!-- ================= NAVBAR ================= -->
+
+        <nav class="navbar">
+
+            <div class="nav-container">
+
+
+                <a
+                    href="#home"
+                    class="brand"
+                >
+
+                    <img
+                        src="logo.jpeg"
+                        alt="CivicAssist AI Logo"
+                    >
+
+                    <span>
+                        CivicAssist AI
+                    </span>
+
+                </a>
+
+
+                <div class="nav-links">
+
+                    <a
+                        href="#home"
+                        data-section="home"
+                        class="active"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="#schemes"
+                        data-section="schemes"
+                    >
+                        Schemes
+                    </a>
+
+                    <a
+                        href="#nearby-services"
+                        data-section="nearby-services"
+                    >
+                        Nearby Services
+                    </a>
+
+                    <a
+                        href="#what-civicassist-do"
+                        data-section="what-civicassist-do"
+                    >
+                        Categories
+                    </a>
+
+                    <a
+                        href="#about"
+                        data-section="about"
+                    >
+                        About
+                    </a>
+
+                    <a
+                        href="#contact"
+                        data-section="contact"
+                    >
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <button
+                    class="login-btn"
+                    id="loginBtn"
+                    type="button"
+                >
+                    Login
+                </button>
+
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- ================= HERO ================= -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-badge">
+
+                    ✦ &nbsp; AI-Powered Information
+
+                </div>
+
+
+                <h1>
+
+                    Government Schemes,
+
+                    <br>
+
+                    <span>
+                        Simplified.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Find schemes → Explore Schemes →
+                    Check Eligibility →
+
+                    <br class="desktop-break">
+
+                    with AI-powered information.
+
+                </p>
+
+
+                <button
+                    class="hero-btn"
+                    id="findSchemesBtn"
+                    type="button"
+                >
+
+                    Smart Talk
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                class="hero-visual"
+                aria-hidden="true"
+            >
+
+                <div class="visual-glow"></div>
+
+
+                <img
+                    src="logo.jpeg"
+                    alt=""
+                    class="hero-logo"
+                >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= NEARBY SERVICES ================= -->
+
+        <section
+            class="nearby-services-section"
+            id="nearby-services"
+        >
+
+            <div class="section-heading">
+                <span class="section-label">NEARBY CIVIC SERVICES</span>
+                <h2>Find Help Near You</h2>
+                <p>Use your location to find nearby lawyers, advocates, government offices, service centres and legal-aid services.</p>
+            </div>
+
+            <div class="nearby-container">
+                <div class="nearby-toolbar">
+                    <button type="button" id="nearbyLocationBtn" class="nearby-primary-btn">
+                        📍 Use My Location
+                    </button>
+                    <select id="nearbyRadius" class="nearby-radius" aria-label="Search radius">
+                        <option value="2000">2 km</option>
+                        <option value="5000" selected>5 km</option>
+                        <option value="10000">10 km</option>
+                        <option value="25000">25 km</option>
+                    </select>
+                </div>
+
+                <div class="nearby-category-grid" id="nearbyCategories">
+                    <button type="button" class="nearby-category active" data-category="lawyers">⚖️<span>Lawyers & Advocates</span></button>
+                    <button type="button" class="nearby-category" data-category="government">🏛️<span>Government Offices</span></button>
+                    <button type="button" class="nearby-category" data-category="service_centers">🏢<span>Government Service Centres</span></button>
+                    <button type="button" class="nearby-category" data-category="legal_aid">🤝<span>Legal Aid Centres</span></button>
+                    <button type="button" class="nearby-category" data-category="police">👮<span>Police Stations</span></button>
+                    <button type="button" class="nearby-category" data-category="courthouse">⚖️<span>Courts & Courthouses</span></button>
+                </div>
+
+                <div id="nearbyStatus" class="nearby-status">Click <strong>Use My Location</strong> to search around you.</div>
+
+                <div class="nearby-layout">
+                    <div id="nearbyMap" class="nearby-map" aria-label="Mapbox showing nearby services"></div>
+                    <div id="nearbyResults" class="nearby-results">
+                        <div class="nearby-empty">Your nearby results will appear here.</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCHEMES ================= -->
+
+        <section
+            class="search-section"
+            id="schemes"
+        >
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    FIND YOUR SCHEME
+                </span>
+
+
+                <h2>
+                    Discover Government Schemes
+                </h2>
+
+
+                <p>
+
+                    Tell us what you need and CivicAssist
+                    will help you explore relevant government schemes.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="search-container">
+
+
+                <form id="schemeSearchForm">
+
+
+                    <div class="search-input-wrapper">
+
+                        <span class="search-icon">
+                            ⌕
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="userNeed"
+                            placeholder="What government support are you looking for?"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="search-btn"
+                    >
+
+                        Search Schemes
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div
+                    id="schemeList"
+                    class="scheme-results"
+                ></div>
+
+
+
+                <!-- ================= SCHEME DETAILS ================= -->
+
+                <div
+                    id="schemeDetailsView"
+                    class="scheme-details-view"
+                    aria-hidden="true"
+                >
+
+
+                    <div class="scheme-selected-card">
+
+
+                        <div class="scheme-selected-icon">
+                            📋
+                        </div>
+
+
+                        <h3 id="schemeSelectedName">
+                            Scheme Name
+                        </h3>
+
+
+                        <p id="schemeSelectedShortDescription">
+                            Scheme description
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="scheme-view-details selected-scheme-back-btn"
+                            id="schemeBackButton"
+                        >
+
+                            <span>
+                                ←
+                            </span>
+
+                            <span>
+                                Back
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="eligibility-test-btn main-card-eligibility-btn"
+                            id="mainEligibilityTestBtn"
+                        >
+
+                            <span>
+                                Eligibility Test
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <div class="scheme-panel-wrapper">
+
+
+                        <!-- ================= SCHEME INFORMATION ================= -->
+
+                        <div
+                            class="scheme-full-details-card"
+                            id="schemeInformationPanel"
+                        >
+
+
+                            <h3>
+                                Scheme Information
+                            </h3>
+
+
+                            <div class="scheme-detail-section">
+
+                                <h4>
+                                    Scheme Details
+                                </h4>
+
+
+                                <p id="schemeFullDescription">
+                                    Scheme details will appear here.
+                                </p>
+
+                            </div>
+
+
+                            <div class="scheme-detail-section">
+
+                                <h4>
+                                    Required Documents
+                                </h4>
+
+
+                                <ul id="schemeDocuments">
+
+                                    <li>
+                                        Aadhaar Card
+                                    </li>
+
+                                    <li>
+                                        Proof of Address
+                                    </li>
+
+                                    <li>
+                                        Relevant supporting documents
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+
+                            <div class="scheme-detail-section">
+
+                                <h4>
+                                    Charges to Apply
+                                </h4>
+
+
+                                <p id="schemeCharges">
+                                    No application charge information available.
+                                </p>
+
+                            </div>
+
+
+                            <div class="scheme-detail-section">
+
+                                <h4>
+                                    Where to Apply
+                                </h4>
+
+
+                                <p id="schemeWhereToApply">
+                                    Government portal or authorised government office.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ================= ELIGIBILITY ================= -->
+
+                        <div
+                            class="scheme-eligibility-card"
+                            id="schemeEligibilityPanel"
+                            aria-hidden="true"
+                        >
+
+
+                            <div class="eligibility-header">
+
+
+                                <span>
+                                    ELIGIBILITY TEST
+                                </span>
+
+
+                                <h3 id="eligibilitySchemeTitle">
+                                    Scheme Name
+                                </h3>
+
+
+                            </div>
+
+
+
+                            <div class="eligibility-content">
+
+                                <h4>
+                                    Check Your Eligibility
+                                </h4>
+
+
+                                <p>
+
+                                    Answer the questions below to check
+                                    whether you may be eligible for this scheme.
+
+                                </p>
+
+
+                            </div>
+
+
+
+                            <form
+                                id="eligibilityForm"
+                                class="eligibility-form"
+                            >
+
+                                <div class="eligibility-question">
+                                    <label for="eligibilityAge">1. What is your age?</label>
+                                    <input id="eligibilityAge" type="number" min="0" max="120" placeholder="Enter age" required>
+                                </div>
+
+                                <div class="eligibility-question">
+                                    <label for="eligibilityState">2. Which state do you live in?</label>
+                                    <input id="eligibilityState" type="text" placeholder="e.g. Tamil Nadu" required>
+                                </div>
+
+                                <div class="eligibility-question">
+                                    <label for="eligibilityOccupation">3. What is your occupation/status?</label>
+                                    <input id="eligibilityOccupation" type="text" placeholder="e.g. student, farmer, worker" required>
+                                </div>
+
+                                <div class="eligibility-question">
+                                    <label for="eligibilityIncome">4. Approximate annual family income (₹)</label>
+                                    <input id="eligibilityIncome" type="number" min="0" step="1" placeholder="e.g. 250000" required>
+                                </div>
+
+                                <div class="eligibility-question">
+                                    <label for="eligibilityCategory">5. Social category/caste, if relevant (optional)</label>
+                                    <select id="eligibilityCategory">
+                                        <option value="">Prefer not to say / Not relevant</option>
+                                        <option value="General">General</option>
+                                        <option value="SC">SC</option>
+                                        <option value="ST">ST</option>
+                                        <option value="OBC">OBC</option>
+                                        <option value="EWS">EWS</option>
+                                    </select>
+                                </div>
+
+                                <div class="eligibility-question">
+                                    <label for="eligibilityDocuments">6. Do you have the key documents required by the scheme?</label>
+                                    <select id="eligibilityDocuments" required>
+                                        <option value="">Select an answer</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="eligibility-actions">
+                                    <button type="button" class="eligibility-clear-btn" id="eligibilityClearBtn">Clear</button>
+                                    <button type="submit" class="eligibility-submit-btn">Check with AI <span>→</span></button>
+                                </div>
+                            </form>
+
+
+
+                            <div
+                                id="eligibilityResultMessage"
+                                class="eligibility-result-message"
+                            ></div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section
+            class="features-section"
+            id="what-civicassist-do"
+        >
+
+
+            <div class="section-heading">
+
+
+                <h2>
+                    What Can CivicAssist Do?
+                </h2>
+
+
+                <p>
+
+                    Explore the different ways CivicAssist
+                    can help you discover government schemes
+                    and services.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div
+                class="features-grid"
+                id="featuresGrid"
+            >
+
+
+                <!-- EDUCATION -->
+
+                <div
+                    class="feature-card"
+                    data-category="Education"
+                >
+
+                    <div class="feature-icon">
+                        🎓
+                    </div>
+
+
+                    <h3>
+                        Education
+                    </h3>
+
+
+                    <p>
+
+                        Discover scholarships and educational
+                        schemes designed to support students.
+
+                    </p>
+
+
+                    <button
+                        class="feature-btn"
+                        type="button"
+                    >
+
+                        Explore Education
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- HEALTHCARE -->
+
+                <div
+                    class="feature-card"
+                    data-category="Healthcare"
+                >
+
+                    <div class="feature-icon">
+                        🏥
+                    </div>
+
+
+                    <h3>
+                        Healthcare
+                    </h3>
+
+
+                    <p>
+
+                        Explore healthcare schemes and support
+                        available for eligible citizens.
+
+                    </p>
+
+
+                    <button
+                        class="feature-btn"
+                        type="button"
+                    >
+
+                        Explore Healthcare
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+		<!-- DISABILITY -->
+
+                <div
+                    class="feature-card"
+                    data-category="Disability"
+                >
+
+                    <div class="feature-icon">
+                        ♿
+                    </div>
+
+
+                    <h3>
+                        Disability
+                    </h3>
+
+
+                    <p>
+
+                        Explore government schemes related
+                        to disability if a person.
+
+                    </p>
+
+
+                    <button
+                        class="feature-btn"
+                        type="button"
+                    >
+
+                        Explore Disability
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+                <!-- FARMER -->
+
+                <div
+                    class="feature-card"
+                    data-category="Farmer"
+                >
+
+                    <div class="feature-icon">
+                        🌾
+                    </div>
+
+
+                    <h3>
+                        Farmer
+                    </h3>
+
+
+                    <p>
+
+                        Discover schemes and financial support
+                        available for farmers.
+
+                    </p>
+
+
+                    <button
+                        class="feature-btn"
+                        type="button"
+                    >
+
+                        Explore Farmer
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+		<!-- HOME -->
+
+                <div
+                    class="feature-card"
+                    data-category="Home"
+                >
+
+                    <div class="feature-icon">
+                        🏠
+                    </div>
+
+
+                    <h3>
+                        Home
+                    </h3>
+
+
+                    <p>
+
+                        Explore government schemes related
+                        to housing and home support.
+
+                    </p>
+
+
+                    <button
+                        class="feature-btn"
+                        type="button"
+                    >
+
+                        Explore Home
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+		 <!-- EMPLOYMENT -->
+
+                <div
+                    class="feature-card"
+                    data-category="Employment"
+                >
+
+                    <div class="feature-icon">
+                        💼
+                    </div>
+
+
+                    <h3>
+                        Employment
+                    </h3>
+
+
+                    <p>
+
+                        Find government schemes and opportunities
+                        that support employment and careers.
+
+                    </p>
+
+
+                    <button
+                        class="feature-btn"
+                        type="button"
+                    >
+
+                        Explore Employment
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- FEATURE DETAIL -->
+
+                <div
+                    class="feature-details"
+                    id="featureDetails"
+                    aria-hidden="true"
+                >
+
+
+                    <div class="feature-details-header">
+
+
+                        <div>
+
+                            <span class="feature-details-label">
+                                Related Government Scheme
+                            </span>
+
+
+                            <h3 id="selectedFeatureTitle">
+                                Scheme
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            class="feature-back-btn"
+                            id="featureBackBtn"
+                            type="button"
+                        >
+
+                            ← Back
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div class="scheme-name-box">
+
+
+                        <span>
+                            Government Schemes
+                        </span>
+
+
+                        <strong id="selectedSchemeName">
+                            Government Scheme
+                        </strong>
+
+
+                        <div
+                            id="featureSchemeList"
+                            class="feature-scheme-list"
+                        ></div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            class="why-section"
+            id="about"
+        >
+
+
+            <div class="section-heading">
+
+
+                <h2>
+                    Why CivicAssist?
+                </h2>
+
+
+                <p>
+
+                    Making government schemes easier to discover,
+                    view the details, and check the eligibility.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        🌐
+                    </div>
+
+
+                    <h3>
+                        Multilingual Assistance
+                    </h3>
+
+
+                    <p>
+
+                        Exploring government schemes in a language
+                        that is comfortable for you.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        ✨
+                    </div>
+
+
+                    <h3>
+                        AI-Powered Information
+                    </h3>
+
+
+                    <p>
+
+                        Get intelligent information to discover schemes
+                        based on your needs.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        👥
+                    </div>
+
+
+                    <h3>
+                        Well-Wisher
+                    </h3>
+
+
+                    <p>
+
+                        Designed to make government information
+                        simple, accessible, and citizen-friendly.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer
+            class="footer"
+            id="contact"
+        >
+
+
+            <div class="footer-content">
+
+
+                <div class="footer-brand">
+
+
+                    <img
+                        src="logo.jpeg"
+                        alt="CivicAssist AI Logo"
+                    >
+
+
+                    <div>
+
+                        <h3>
+                            CivicAssist AI
+                        </h3>
+
+
+                        <p>
+
+                            Making government schemes easier
+                            to understand for everyone.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="footer-info">
+
+
+                    <p>
+                        AI-powered information for citizens
+                    </p>
+
+
+                    <p>
+                        Last Updated : © 2026 September By CivicAssist AI
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </footer>
+
+
+
+        <!-- ================= LOGIN MODAL ================= -->
+
+        <div
+            class="modal-overlay"
+            id="loginModal"
+        >
+
+
+            <div
+                class="login-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="loginTitle"
+            >
+
+
+                <button
+                    class="modal-close"
+                    id="closeLoginModal"
+                    type="button"
+                    aria-label="Close"
+                >
+
+                    ×
+
+                </button>
+
+
+                <div class="login-modal-icon">
+                    👤
+                </div>
+
+
+                <h2 id="loginTitle">
+                    Welcome to CivicAssist
+                </h2>
+
+
+                <p>
+                    Enter your details to continue.
+                </p>
+
+
+
+                <form id="loginForm">
+
+
+                    <!-- USER NAME -->
+
+                    <div class="form-group">
+
+                        <label for="userName">
+                            User Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="userName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group">
+
+                        <label for="userState">
+                            State
+                        </label>
+
+
+                        <select
+                            id="userState"
+                            required
+                        >
+
+                            <option value="">
+                                Select your state
+                            </option>
+
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Assam</option>
+                            <option>Bihar</option>
+                            <option>Chhattisgarh</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Jharkhand</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Odisha</option>
+                            <option>Punjab</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                            <option>Tripura</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+                            <option>Delhi</option>
+                            <option>Jammu and Kashmir</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- LANGUAGE -->
+
+                    <div class="form-group">
+
+                        <label for="userLanguage">
+                            Preferred Language
+                        </label>
+
+
+                        <select
+                            id="userLanguage"
+                            required
+                        >
+
+                            <option value="">
+                                Select your language
+                            </option>
+
+                            <option value="English">
+                                English
+                            </option>
+
+                            <option value="Hindi">
+                                Hindi
+                            </option>
+
+                            <option value="Tamil">
+                                Tamil
+                            </option>
+
+                            <option value="Telugu">
+                                Telugu
+                            </option>
+
+                            <option value="Kannada">
+                                Kannada
+                            </option>
+
+                            <option value="Bengali">
+                                Bengali
+                            </option>
+
+                            <option value="Marathi">
+                                Marathi
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MOBILE -->
+
+                    <div class="form-group">
+
+                        <label for="mobileNumber">
+                            Mobile Number
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="mobileNumber"
+                            placeholder="Enter 10-digit mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="login-submit-btn"
+                    >
+
+                        Continue
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= LOGIN SUCCESS ================= -->
+
+        <div
+            class="login-success-message"
+            id="loginSuccessMessage"
+        >
+
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <div class="success-content">
+
+
+                <strong>
+                    Success
+                </strong>
+
+
+                <p id="successMessageText">
+                    Welcome to CivicAssist.
+                </p>
+
+
+            </div>
+
+
+            <button
+                class="success-close"
+                id="closeSuccessMessage"
+                type="button"
+            >
+                ×
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <div
+            class="logout-overlay"
+            id="logoutOverlay"
+        >
+
+
+            <div class="logout-dialog">
+
+
+                <div class="logout-icon">
+                    ↪
+                </div>
+
+
+                <h2>
+                    Logout from CivicAssist?
+                </h2>
+
+
+                <p>
+
+                    Your local profile information will be removed
+                    from this browser.
+
+                </p>
+
+
+                <div class="logout-actions">
+
+
+                    <button
+                        type="button"
+                        class="logout-cancel"
+                        id="logoutCancel"
+                    >
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="logout-confirm"
+                        id="logoutConfirm"
+                    >
+
+                        Logout
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= SMART TALK ================= -->
+
+    <section
+        class="smart-talk-page"
+        id="smartTalkPage"
+        aria-hidden="true"
+    >
+
+
+        <div class="smart-talk-container">
+
+
+            <header class="smart-talk-header">
+
+
+                <div class="smart-talk-brand">
+
+
+                    <div class="smart-talk-logo">
+
+                        <img
+                            src="logo.jpeg"
+                            alt="CivicAssist AI Logo"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <h1>
+                            Smart Talk
+                        </h1>
+
+
+                        <p>
+                            CivicAssist AI Information Assistant
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="smart-talk-exit-btn"
+                    id="smartTalkExitBtn"
+                >
+
+                    <span>
+                        ←
+                    </span>
+
+                    Exit
+
+                </button>
+
+
+            </header>
+
+
+
+            <div class="smart-talk-body">
+
+
+                <!-- ================= HISTORY ================= -->
+
+                <aside
+                    class="smart-talk-history-panel"
+                    id="smartTalkHistoryPanel"
+                >
+
+
+                    <div class="smart-talk-history-header">
+
+
+                        <h2>
+                            Chat History
+                        </h2>
+
+
+                        <button
+                            type="button"
+                            class="smart-talk-history-new"
+                            id="smartTalkNewChatBtn"
+                            title="New chat"
+                            aria-label="New chat"
+                        >
+
+                            ＋
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <div
+                        class="smart-talk-history-list"
+                        id="smartTalkHistoryList"
+                    >
+
+
+                        <button
+                            type="button"
+                            class="smart-talk-history-item active"
+                        >
+
+                            <span class="smart-talk-history-item-icon">
+                                💬
+                            </span>
+
+
+                            <span class="smart-talk-history-item-text">
+                                New conversation
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </aside>
+
+
+
+                <!-- ================= MAIN CHAT ================= -->
+
+                <main class="smart-talk-main">
+
+
+                    <div class="smart-talk-welcome">
+
+
+                        <div class="smart-talk-welcome-icon">
+                            ✨
+                        </div>
+
+
+                        <h2>
+                            Welcome to Smart Talk
+                        </h2>
+
+
+                        <p>
+
+                            Ask questions about government schemes,
+                            eligibility, documents, services, benefits,
+                            and more.
+
+                        </p>
+
+
+                        <div class="smart-talk-suggestions">
+
+
+                            <button
+                                type="button"
+                                class="smart-talk-suggestion"
+                            >
+                                Government schemes for students
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="smart-talk-suggestion"
+                            >
+                                Healthcare schemes
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="smart-talk-suggestion"
+                            >
+                                Schemes for farmers
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="smart-talk-suggestion"
+                            >
+                                How can I check eligibility?
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CHAT MESSAGES -->
+
+                    <div
+                        class="chat-messages"
+                        id="chatMessages"
+                    >
+
+
+                        <div class="chat-message ai-message">
+
+
+                            <div class="chat-avatar">
+                                ✨
+                            </div>
+
+
+                            <div class="chat-bubble">
+
+
+                                <strong>
+                                    CivicAssist AI
+                                </strong>
+
+
+                                <p>
+
+                                    Hello! I am Smart Talk.
+                                    Ask me anything about government
+                                    schemes and citizen services.
+
+                                </p>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CHAT INPUT -->
+
+                    <div class="smart-talk-input-area">
+
+
+                        <form
+                            class="smart-talk-form"
+                            id="smartTalkForm"
+                        >
+
+
+                            <div class="smart-talk-input-wrapper">
+
+
+                                <!-- FILE UPLOAD -->
+
+                                <button
+                                    type="button"
+                                    class="smart-talk-tool-btn"
+                                    id="smartTalkUploadBtn"
+                                    title="Upload file"
+                                    aria-label="Upload file"
+                                >
+
+                                    <span class="smart-talk-tool-icon">
+                                        🗁
+                                    </span>
+
+                                </button>
+
+
+                                <input
+                                    type="file"
+                                    id="smartTalkFileInput"
+                                    hidden
+                                >
+
+
+                                <!-- TEXT INPUT -->
+
+                                <input
+                                    type="text"
+                                    id="smartTalkInput"
+                                    placeholder="Ask Smart Talk something..."
+                                    autocomplete="off"
+                                >
+
+
+                                <!-- LANGUAGE -->
+
+                                <button
+                                    type="button"
+                                    class="smart-talk-tool-btn smart-talk-language-btn"
+                                    id="smartTalkLanguageBtn"
+                                    title="Change language"
+                                    aria-label="Change language"
+                                >
+
+                                    <span class="smart-talk-tool-icon">
+                                        🌐
+                                    </span>
+
+                                </button>
+
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="smart-talk-send-btn"
+                            >
+
+                                Send
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+
+                        </form>
+
+
+                        <p class="smart-talk-disclaimer">
+
+                            Smart Talk is connected to the CivicAssist AI backend.
+                            Responses are AI-generated — always verify details on official government sources.
+
+                        </p>
+
+
+                    </div>
+
+
+                </main>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= LANGUAGE POPUP ================= -->
+
+    <div
+        class="smart-talk-language-overlay"
+        id="smartTalkLanguageOverlay"
+        aria-hidden="true"
+    >
+
+
+        <div
+            class="smart-talk-language-popup"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="smartTalkLanguageTitle"
+        >
+
+
+            <div class="smart-talk-language-popup-header">
+
+
+                <div>
+
+
+                    <span class="smart-talk-language-popup-label">
+                        LANGUAGE
+                    </span>
+
+
+                    <h2 id="smartTalkLanguageTitle">
+                        Choose Language
+                    </h2>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-close"
+                    id="smartTalkLanguageCloseBtn"
+                    aria-label="Close language selection"
+                >
+
+                    ×
+
+                </button>
+
+
+            </div>
+
+
+
+            <p class="smart-talk-language-popup-description">
+
+                Select the language you prefer for your
+                Smart Talk conversation.
+
+            </p>
+
+
+
+            <div
+                class="smart-talk-language-options"
+                id="smartTalkLanguageOptions"
+            >
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="English"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        A
+                    </span>
+
+                    <span>
+                        English
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="Hindi"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        ह
+                    </span>
+
+                    <span>
+                        Hindi
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="Tamil"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        த
+                    </span>
+
+                    <span>
+                        Tamil
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="Telugu"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        త
+                    </span>
+
+                    <span>
+                        Telugu
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="Kannada"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        ಕ
+                    </span>
+
+                    <span>
+                        Kannada
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="Bengali"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        ব
+                    </span>
+
+                    <span>
+                        Bengali
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="smart-talk-language-option"
+                    data-language="Marathi"
+                >
+
+                    <span class="smart-talk-language-option-icon">
+                        म
+                    </span>
+
+                    <span>
+                        Marathi
+                    </span>
+
+                    <span class="smart-talk-language-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
